@@ -5,8 +5,19 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     private Vector2 _direction = Vector2.right;
-
-   private void Update()
+    private List<Transform> _segments;
+    public Transform segmentPrefab;
+   
+    private void Start()
+    {
+        _segments = new List<Transform>();
+        _segments.Add(this.transform);
+    }
+    
+    
+    
+    
+    private void Update()
 
     {
         if (Input.GetKeyDown(KeyCode.W))
@@ -30,7 +41,13 @@ public class movement : MonoBehaviour
                Mathf.Round(this.transform.position.y) + _direction.y,
                0.0f);
 
+    private void Grow()
+    {
+       Transform segment = Instantiate(this.segmentPrefab);
+        segment.position = _segments[_segments.Count - 1].position;
 
+        _segments.Add(segment);
+    }
 
 
 
