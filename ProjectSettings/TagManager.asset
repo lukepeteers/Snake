@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 2071388547
+    locked: 0
+  - name: Game
+    uniqueID: 990913157
+    locked: 0
+  - name: Pps
+    uniqueID: 356876889
+    locked: 0
